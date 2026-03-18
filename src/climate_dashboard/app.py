@@ -1,7 +1,7 @@
 """Dash/Plotly web application for the Climate Entropy Dashboard."""
 
-from dash import Dash, dcc, html
 import plotly.express as px
+from dash import Dash, dcc, html
 
 from .core import aggregate_entropy_data
 

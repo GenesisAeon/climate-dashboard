@@ -5,7 +5,7 @@ from rich.console import Console
 
 app = typer.Typer(
     name="cdash",
-    help="Climate-Dashboard CLI – interactive entropy visualization for the GenesisAeon stack.",
+    help="Climate-Dashboard CLI – entropy visualization for the GenesisAeon stack.",
     add_completion=False,
 )
 console = Console()
@@ -13,7 +13,7 @@ console = Console()
 
 @app.command()
 def run(
-    port: int = typer.Option(8050, "--port", "-p", help="Port to run the dashboard on."),
+    port: int = typer.Option(8050, "--port", "-p", help="Dashboard port."),
     debug: bool = typer.Option(False, "--debug", help="Enable Dash debug mode."),
 ) -> None:
     """Launch the interactive Dash dashboard."""
