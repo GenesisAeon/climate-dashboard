@@ -1,84 +1,87 @@
-# diamond-setup
+# climate-dashboard
 
-**Universal Python project scaffold** — generate professional, CI-ready skeletons in seconds.
+**Interactive Climate Entropy Dashboard** – visualizes the GenesisAeon stack in real-time: duality waves, UTAC thresholds, cosmic moments, mandala resonance and sonified output.
 
-[![CI](https://github.com/GenesisAeon/diamond-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/diamond-setup/actions/workflows/ci.yml)
+[![CI](https://github.com/GenesisAeon/climate-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/climate-dashboard/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-No cookiecutter, no Jinja2, no magic. Just a clean CLI that produces a fully working project — `uv sync`, `pytest`, ruff, pre-commit and CI all wired up from second one.
+[![PyPI](https://img.shields.io/pypi/v/climate-dashboard)](https://pypi.org/project/climate-dashboard/)
 
 ---
 
 ## Install
 
 ```bash
-pip install diamond-setup
-# or
-uv tool install diamond-setup
+pip install climate-dashboard
+# or with full GenesisAeon stack bindings
+pip install "climate-dashboard[stack]"
 ```
 
 ## Usage
 
 ```bash
-# New project with the minimal template (default)
-diamond scaffold my-lib
+# Launch interactive Dash dashboard (default port 8050)
+cdash run
 
-# GenesisAeon preset (adds domains.yaml + entropy-table bridge)
-diamond scaffold my-physics-tool --template genesis --author "Ada Lovelace"
+# Custom port
+cdash run --port 8080
 
-# Preview what would be generated (no files written)
-diamond scaffold my-lib --dry-run
+# CLI summary of entropy data
+cdash aggregate
 
-# See all templates
-diamond list-templates
-
-# Validate any project directory
-diamond validate path/to/my-project
-diamond validate          # validates the current directory
+# Custom time steps
+cdash aggregate --steps 200
 ```
 
 ## What you get
 
-Running `diamond scaffold my-lib` produces:
+`cdash run` opens an interactive Plotly/Dash dashboard at `http://127.0.0.1:8050` displaying:
+
+- **Duality wave** – entropy-governance placeholder (φ-modulated sine)
+- **Modulated signal** – medium-modulation output (duality × 0.618)
+- **UTAC threshold** – utac-core logarithmic boundary curve
+
+## Project structure
 
 ```
-my-lib/
-├── src/
-│   └── my_lib/
-│       └── __init__.py       # __version__ = "0.1.0"
-├── tests/
-│   ├── __init__.py
-│   └── test_main.py
-├── .github/
-│   └── workflows/
-│       └── ci.yml            # matrix: 3.11 + 3.12
-├── pyproject.toml            # hatchling, ruff, pytest configured
+climate-dashboard/
+├── pyproject.toml
 ├── README.md
-├── .gitignore
-└── .pre-commit-config.yaml   # ruff + standard hooks
+├── domains.yaml
+├── src/
+│   └── climate_dashboard/
+│       ├── __init__.py
+│       ├── core.py                  # Data aggregator
+│       ├── app.py                   # Dash/Plotly web app
+│       ├── cli.py                   # Typer CLI (cdash)
+│       └── entropy_table_bridge.py  # entropy-table integration
+├── tests/
+│   ├── test_core.py
+│   └── test_cli.py
+└── mkdocs.yml
 ```
 
-Then just:
+## Stack integration
 
-```bash
-cd my-lib
-uv sync --dev
-pre-commit install
-uv run pytest
-```
+Install the optional `[stack]` extras to bind all GenesisAeon packages:
 
-## Templates
+| Package | Role |
+|---|---|
+| `entropy-governance` | Duality wave source |
+| `medium-modulation` | Signal modulation |
+| `utac-core` | UTAC threshold curves |
+| `mandala-visualizer` | Mandala resonance plots |
+| `sonification` | Audio export layer |
+| `entropy-table` | Domain metric registry |
+| `cosmic-moment` | Cosmic event markers |
+| `fieldtheory` | Unified field helpers |
+| `sigillin` | Sigil generation |
+| `implosive-genesis` | Genesis core events |
 
-| Template | Description |
-|----------|-------------|
-| `minimal` | Clean Python package for everyone |
-| `genesis` | Adds `domains.yaml` + entropy-table bridge (GenesisAeon preset) |
+## DOI
 
-## Extending
-
-Adding a new template is one Python file. See [docs/templates.md](docs/templates.md).
+DOI (after Zenodo release): 10.5281/zenodo.XXXXXXX
 
 ---
 
-Built with [uv](https://docs.astral.sh/uv/) · [Typer](https://typer.tiangolo.com/) · [Rich](https://rich.readthedocs.io/)
+Built with [Dash](https://dash.plotly.com/) · [Plotly](https://plotly.com/python/) · [Typer](https://typer.tiangolo.com/) · [Rich](https://rich.readthedocs.io/)
