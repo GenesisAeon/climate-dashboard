@@ -80,7 +80,10 @@ Install the optional `[stack]` extras to bind all GenesisAeon packages:
 
 ## DOI
 
-DOI (after Zenodo release): 10.5281/zenodo.XXXXXXX
+**DOI**: [10.5281/zenodo.19091880](https://doi.org/10.5281/zenodo.19091880)
+**PyPI**: `pip install climate-dashboard` (oder `pip install "climate-dashboard[stack]"` für den vollen GenesisAeon-Stack)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19091880.svg)](https://doi.org/10.5281/zenodo.19091880)
 
 ---
 
