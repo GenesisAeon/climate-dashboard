@@ -1,7 +1,7 @@
-[project]
+﻿[project]
 name = "climate-dashboard"
-version = "0.1.0"
-description = "Interactive Climate Entropy Dashboard for the GenesisAeon stack – visualizes duality, modulation, UTAC thresholds, mandala resonance and sonification output."
+version = "0.3.1"
+description = "Interactive Climate Entropy Dashboard for the GenesisAeon stack â€“ visualizes duality, modulation, UTAC thresholds, mandala resonance and sonification output."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
@@ -82,3 +82,4 @@ addopts = "--cov=climate_dashboard --cov-report=term-missing -v"
 [tool.coverage.run]
 source = ["src"]
 omit = ["tests/*"]
+
