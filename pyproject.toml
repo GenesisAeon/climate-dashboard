@@ -1,4 +1,4 @@
-﻿[project]
+[project]
 name = "climate-dashboard"
 version = "0.3.1"
 description = "Interactive Climate Entropy Dashboard for the GenesisAeon stack â€“ visualizes duality, modulation, UTAC thresholds, mandala resonance and sonification output."
