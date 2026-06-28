@@ -1,17 +1,17 @@
 [project]
 name = "climate-dashboard"
-version = "0.3.1"
+version = "1.0.0"
 description = "Interactive Climate Entropy Dashboard for the GenesisAeon stack â€“ visualizes duality, modulation, UTAC thresholds, mandala resonance and sonification output."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
+license = { text = "GPL-3.0-or-later" }
 authors = [{ name = "GenesisAeon Team", email = "team@genesisaeon.org" }]
 keywords = ["climate", "entropy", "dashboard", "visualization", "plotly", "genesisaeon"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Web Environment",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -28,16 +28,16 @@ dependencies = [
 
 [project.optional-dependencies]
 stack = [
-    "sonification>=0.0.10",
-    "mandala-visualizer>=0.1.0",
-    "utac-core>=0.1.0",
-    "sigillin>=0.1.0",
-    "fieldtheory>=0.1.0",
-    "cosmic-moment>=0.1.0",
-    "medium-modulation>=0.1.0",
-    "entropy-governance>=0.1.0",
-    "entropy-table>=1.0.1",
-    "implosive-genesis>=0.4.0",
+    "sonification>=1.0.0",
+    "mandala-visualizer>=1.0.0",
+    "utac-core>=1.0.0",
+    "sigillin>=1.0.0",
+    "fieldtheory>=1.0.0",
+    "cosmic-moment>=1.0.0",
+    "medium-modulation>=1.0.0",
+    "entropy-governance>=1.0.0",
+    "entropy-table>=2.0.0",
+    "implosive-genesis>=1.0.0",
 ]
 dev = [
     "pytest>=8.0",
