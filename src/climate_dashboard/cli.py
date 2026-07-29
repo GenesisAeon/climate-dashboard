@@ -1,5 +1,6 @@
 """Climate-Dashboard CLI – interactive entropy visualization."""
 
+import io
 import sys
 
 import typer
@@ -9,8 +10,9 @@ from rich.console import Console
 # version this either raises UnicodeEncodeError or silently substitutes a
 # mojibake placeholder for non-ASCII characters instead of crashing. Force
 # UTF-8 stdout/stderr so behavior matches Linux/macOS terminals.
-if hasattr(sys.stdout, "reconfigure"):
+if isinstance(sys.stdout, io.TextIOWrapper):
     sys.stdout.reconfigure(encoding="utf-8")
+if isinstance(sys.stderr, io.TextIOWrapper):
     sys.stderr.reconfigure(encoding="utf-8")
 
 app = typer.Typer(
@@ -51,7 +53,9 @@ def aggregate(
 @app.command()
 def export(
     steps: int = typer.Option(100, "--steps", "-s", help="Number of time steps."),
-    output: str = typer.Option("domains.yaml", "--output", "-o", help="Output YAML path."),
+    output: str = typer.Option(
+        "domains.yaml", "--output", "-o", help="Output YAML path."
+    ),
 ) -> None:
     """Export the aggregated entropy summary to entropy-table via the
     optional [stack] extra.
