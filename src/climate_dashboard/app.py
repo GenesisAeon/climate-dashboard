@@ -3,6 +3,7 @@
 import plotly.express as px
 from dash import Dash, dcc, html
 
+from . import __version__
 from .core import aggregate_entropy_data
 
 
@@ -41,7 +42,7 @@ def create_dashboard() -> Dash:
             ),
             dcc.Graph(figure=fig, style={"height": "70vh"}),
             html.Footer(
-                "GenesisAeon Stack – climate-dashboard v0.1.0",
+                f"GenesisAeon Stack - climate-dashboard v{__version__}",
                 style={"textAlign": "center", "color": "#555555", "marginTop": "2rem"},
             ),
         ],

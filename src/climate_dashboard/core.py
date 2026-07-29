@@ -17,7 +17,14 @@ def aggregate_entropy_data(steps: int = 100) -> pd.DataFrame:
     duality = np.sin(t * 1.618)  # placeholder from entropy-governance
     modulation = duality * 0.618  # from medium-modulation
     utac = 0.0625 * np.log(t + 1)  # from utac-core
-    mandala_peaks = np.where(modulation > np.mean(modulation))[0]
+
+    # Per-row peak indicator (1 where `modulation` exceeds its own mean,
+    # 0 otherwise). Previously this column held the *count* of peak
+    # indices broadcast identically to every row (a single repeated
+    # scalar, not real per-row peak detection -- see
+    # climate-dashboard-blindtest), which made the column useless for
+    # actually locating where peaks occur along the time series.
+    mandala_peaks = (modulation > np.mean(modulation)).astype(int)
 
     df = pd.DataFrame(
         {
@@ -25,7 +32,7 @@ def aggregate_entropy_data(steps: int = 100) -> pd.DataFrame:
             "duality": duality,
             "modulated": modulation,
             "utac_threshold": utac,
-            "mandala_peaks": [len(mandala_peaks)] * steps,
+            "mandala_peaks": mandala_peaks,
         }
     )
     return df

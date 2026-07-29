@@ -64,20 +64,30 @@ climate-dashboard/
 
 ## Stack integration
 
-Install the optional `[stack]` extras to bind all GenesisAeon packages:
+The optional `[stack]` extras declare version pins for the packages
+below, but **none of them are currently invoked by this dashboard's own
+code** — `duality`/`modulated`/`utac_threshold` in `aggregate_entropy_data()`
+are self-contained formulas approximated inline (only labeled with
+comments like "from entropy-governance"), not real calls into those
+packages. The one exception, `entropy-table`, has real bridge code
+(`cdash export`, `entropy_table_bridge.py`) but it currently raises a
+clear error on any `entropy-table>=2.0` install, since that release
+removed the `EntropyTable` class this bridge was written against.
 
-| Package | Role |
-|---|---|
-| `entropy-governance` | Duality wave source |
-| `medium-modulation` | Signal modulation |
-| `utac-core` | UTAC threshold curves |
-| `mandala-visualizer` | Mandala resonance plots |
-| `sonification` | Audio export layer |
-| `entropy-table` | Domain metric registry |
-| `cosmic-moment` | Cosmic event markers |
-| `fieldtheory` | Unified field helpers |
-| `sigillin` | Sigil generation |
-| `implosive-genesis` | Genesis core events |
+| Package | Declared role | Actually wired up? |
+|---|---|---|
+| `entropy-governance` | Duality wave source | No — inline approximation only |
+| `medium-modulation` | Signal modulation | No — inline approximation only |
+| `utac-core` | UTAC threshold curves | No — inline approximation only |
+| `mandala-visualizer` | Mandala resonance plots | No |
+| `sonification` | Audio export layer | No |
+| `entropy-table` | Domain metric registry | Partially — `cdash export` calls it, but errors against the currently-published `entropy-table>=2.0` API (needs an update to this bridge) |
+| `cosmic-moment` | Cosmic event markers | No |
+| `fieldtheory` | Unified field helpers | No |
+| `sigillin` | Sigil generation | No |
+| `implosive-genesis` | Genesis core events | No |
+
+Contributions that wire any of these up for real are welcome.
 
 ## License
 
