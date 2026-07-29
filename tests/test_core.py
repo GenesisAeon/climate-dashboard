@@ -34,10 +34,17 @@ def test_aggregate_utac_non_negative():
     assert (df["utac_threshold"] >= 0).all()
 
 
-def test_aggregate_mandala_peaks_constant_per_run():
+def test_aggregate_mandala_peaks_is_per_row_indicator():
+    """Regression test: mandala_peaks previously held a single scalar
+    (the peak *count*) broadcast identically to every row, making it
+    useless for locating where peaks actually occur (see
+    climate-dashboard-blindtest). It must now be a real 0/1 indicator
+    that varies across rows and matches modulation > mean(modulation)."""
     df = aggregate_entropy_data(steps=100)
-    # mandala_peaks column holds a scalar repeated across all rows
-    assert df["mandala_peaks"].nunique() == 1
+    assert set(df["mandala_peaks"].unique()) <= {0, 1}
+    assert df["mandala_peaks"].nunique() == 2
+    expected = (df["modulated"] > df["modulated"].mean()).astype(int)
+    assert (df["mandala_peaks"] == expected).all()
 
 
 def test_aggregate_single_step():
