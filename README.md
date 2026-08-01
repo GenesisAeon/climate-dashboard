@@ -100,10 +100,10 @@ See [LICENSE](LICENSE) for details.
 
 ## Citation
 
-**DOI**: [10.5281/zenodo.19091880](https://doi.org/10.5281/zenodo.19091880)
+**DOI**: [10.5281/zenodo.21000829](https://doi.org/10.5281/zenodo.21000829)
 **PyPI**: `pip install climate-dashboard` (oder `pip install "climate-dashboard[stack]"` für den vollen GenesisAeon-Stack)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19091880.svg)](https://doi.org/10.5281/zenodo.19091880)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21000829.svg)](https://doi.org/10.5281/zenodo.21000829)
 
 ---
 
