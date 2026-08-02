@@ -24,18 +24,22 @@ dependencies = [
     "numpy>=2.0.0",
     "rich>=13.0.0",
     "typer>=0.15.0",
+    "entropy-governance>=1.0.0",
+    "medium-modulation>=1.0.0",
+    "utac-core>=1.0.0",
 ]
 
 [project.optional-dependencies]
+# entropy-governance, medium-modulation, and utac-core moved to core
+# `dependencies` above (2026-08-02) -- aggregate_entropy_data() now
+# actually imports and calls them. The rest of "stack" remains aspirational
+# (declared, not yet wired into any real code path).
 stack = [
     "sonification>=1.0.0",
     "mandala-visualizer>=1.0.0",
-    "utac-core>=1.0.0",
     "sigillin>=1.0.0",
     "fieldtheory>=1.0.0",
     "cosmic-moment>=1.0.0",
-    "medium-modulation>=1.0.0",
-    "entropy-governance>=1.0.0",
     "entropy-table>=2.0.0",
     "implosive-genesis>=1.0.0",
 ]
