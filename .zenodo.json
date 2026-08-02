@@ -1,5 +1,5 @@
 {
-  "title": "climate-dashboard — P-CLIMATE-UI: Interactive Climate Entropy Dashboard for the GenesisAeon stack",
+  "title": "climate-dashboard — P82 (formerly P-CLIMATE-UI): Interactive Climate Entropy Dashboard for the GenesisAeon stack",
   "description": "<p>Interactive Climate Entropy Dashboard for the GenesisAeon stack – visualizes duality, modulation, UTAC thresholds, mandala resonance and sonification output.</p><p>Part of the <strong>GenesisAeon</strong> ecosystem (P-CLIMATE-UI, domain: ERA5 climate dashboard / UTAC visualization).</p><p>Dual-licensed: source code under GPL-3.0-or-later, documentation under CC BY 4.0.</p><p>See <a href=\"https://github.com/GenesisAeon/climate-dashboard\">github.com/GenesisAeon/climate-dashboard</a> for source, documentation, and reproducibility notebooks.</p>",
   "creators": [
     {

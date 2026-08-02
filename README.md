@@ -8,6 +8,8 @@
 [![Docs License: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](LICENSE-DOCS)
 [![PyPI](https://img.shields.io/pypi/v/climate-dashboard)](https://pypi.org/project/climate-dashboard/)
 
+**GenesisAeon Package P82** (formerly informally "P-CLIMATE-UI")
+
 ---
 
 ## Install
